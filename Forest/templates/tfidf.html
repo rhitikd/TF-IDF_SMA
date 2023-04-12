@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>TF-IDF VLAB</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+   <nav>
+    <div class="nav-wrapper pink light-accent-2">
+      <a href="#" class="brand-logo center black-text">Term Frequency - Inverse Document Frequency</a>
+    </div>
+  </nav>
+
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <h4 class="header center cyan-text text-darken-4">K.J. Somaiya IT</h4>
+      <div class="row center">
+        <h5 class="header col s12 medium black-text">TF-IDF stands for "Term Frequency-Inverse Document Frequency" and is a numerical representation of the importance of a term in a document within a collection of documents. It is commonly used in natural language processing (NLP) and information retrieval tasks, such as text classification, information retrieval, and text summarization.
+        <br>
+        </h5>
+      </div>
+      
+      <div class="row">
+        <form action='/predict' method="post" class="col s12">
+          <div class="row">
+            <div class="input-field col s6">
+              <label for="first_name"><b>Document 1</b></label>
+              <br>
+              <input placeholder="Enter here" name="SepalLength" id="first_name" type="text" class="validate">
+            </div>
+            
+            <div class="input-field col s6">
+              <label for="last_name"><b>Document 2</b></label>
+              <br>
+              <input id="last_name" name="SepalWidth" placeholder="Enter here"  type="text" class="validate" >
+            </div>
+          </div>
+
+          <div class="row center">
+            <button type="submit" class="btn-large waves-effect waves-light pink light-accent-2">Calculate</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="row center">
+
+        <br>
+        <div class="row center">
+          <div style="margin: 0 auto; width: 50%;">
+              <h1>TF-IDF</h1>
+          <table style="border: 2px solid #000; border-collapse: collapse; width: 100%;">
+            <thead>
+          <tr align="center">
+            <th style="border: 2px solid #000; padding: 8px;  text-align: center;">Word</th>
+            <th style="border: 2px solid #000; padding: 8px;  text-align: center;">TF-IDF</th>
+          </tr>
+          </thead>
+         {% for item in pred %}
+                <tr align="center">
+                  <td style="border: 2px solid #000; padding: 8px;  text-align: center;">{{ item[1] }}</td>
+                  <td style="border: 2px solid #000; padding: 8px;  text-align: center;">{{ item[0] }}</td>
+                </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+    
+      </br>
+      
+    </div>
+  </div>
+  <br><br>
+  </div>
+  </div>>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src=".js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+<footer style=" padding: 8px;  text-align: center; font-size: 20px">
+  <p>Designed by: Prachiti Bapat (56), Rhitik Doshi (62), Ruchir Jadhav (63), Dhruv Krishnan (64), Vedant Mishra (65), Saumya Shah (69), Vatsal Shah (70), Mink Shethia (72)</p>
+</footer>
+  </body>
+</html>
+
